@@ -3,7 +3,7 @@ import { Formik, } from 'formik';
 import * as yup from 'yup';
 import { nanoid } from 'nanoid';
 import {useDispatch, useSelector} from 'react-redux';
-import {createContact} from '../../redux/slice/contactSlice';
+import {createContact} from '../../redux/contacts/contactsOperations';
 
 import { FormStyled, Label, Fieldtyled, Button, ErrMessage } from "./ContactForm.styled";
 
@@ -19,12 +19,11 @@ const initialValues = {
 };
 
 export const ContactForm = () => {
-    const contacts =useSelector(state => state.contacts.contacts)
+    const contacts =useSelector(state => state.contacts.contacts);
 
     const dispatch = useDispatch();
 
     const handleSubmit = (values, {resetForm}) => {
-        console.log(values.name)
         const newArray = {
             name: values.name,
             number: values.number,

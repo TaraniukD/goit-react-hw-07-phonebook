@@ -2,11 +2,11 @@ import { configureStore } from '@reduxjs/toolkit'
 import { persistStore, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
 import filterSlice from './slice/filterSlice';
 import logger from 'redux-logger';
-import {persistedReducer} from './slice/contactSlice';
+import {contactReducer} from './slice/contactSlice';
 
 const store = configureStore({
   reducer: {
-    contacts: persistedReducer,
+    contacts: contactReducer,
     filter: filterSlice,
   }, 
   
@@ -19,4 +19,4 @@ const store = configureStore({
 
 export default store;
 
-export const persistor = persistStore(store);
+// export const persistor = persistStore(store);
