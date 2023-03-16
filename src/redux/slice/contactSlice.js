@@ -43,12 +43,11 @@ const contactsSlice = createSlice({
       },
       [deleteContact.rejected]: handleRejected,
     },
-    
   })
 
-  // export const { createContact, deleteContact } = contactsSlice.actions;
-
   export const contactReducer = contactsSlice.reducer;
+
+  // export const { createContact, deleteContact } = contactsSlice.actions;
 
   // const persistConfig = {
   //   key: 'contactsList',
